@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.6
 
 RUN apk --update add gcc git libjpeg-turbo-dev musl-dev py-pip python-dev zlib-dev && \
     pip install -U sphinx Pygments setuptools \
