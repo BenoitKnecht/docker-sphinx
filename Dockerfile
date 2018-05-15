@@ -1,12 +1,13 @@
 FROM alpine:3.7
 
-RUN apk --update add gcc git libjpeg-turbo-dev musl-dev py-pip python-dev zlib-dev && \
-    pip install -U sphinx==1.6.7 Pygments setuptools \
+RUN apk --update add py-pip && \
+    apk --update add -t deps git gcc libjpeg-turbo-dev musl-dev python-dev zlib-dev && \
+    pip install -U sphinx==1.7.4 Pygments setuptools \
                    docutils mkdocs mock pillow \
                    git+https://github.com/rtfd/readthedocs-sphinx-ext.git \
                    sphinx-rtd-theme alabaster \
                    commonmark git+https://github.com/rtfd/recommonmark.git && \
-    apk del git gcc libjpeg-turbo-dev python-dev musl-dev zlib-dev && \
+    apk del --purge deps && \
     rm -rf /root/.cache /var/cache/apk/*
 
 CMD /bin/sh
