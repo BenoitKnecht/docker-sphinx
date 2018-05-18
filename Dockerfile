@@ -6,7 +6,8 @@ RUN apk --update add py-pip && \
                    docutils mkdocs mock pillow \
                    git+https://github.com/rtfd/readthedocs-sphinx-ext.git \
                    sphinx-rtd-theme alabaster \
-                   commonmark git+https://github.com/rtfd/recommonmark.git && \
+                   commonmark git+https://github.com/rtfd/recommonmark.git \
+                   git+https://github.com/mgaitan/sphinxcontrib-mermaid.git && \
     apk del --purge deps && \
     rm -rf /root/.cache /var/cache/apk/*
 
