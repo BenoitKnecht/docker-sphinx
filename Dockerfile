@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM alpine:3.8
 
 RUN apk --update add py-pip && \
     apk --update add -t deps git gcc libjpeg-turbo-dev musl-dev python-dev zlib-dev && \
