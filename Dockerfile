@@ -1,8 +1,8 @@
-FROM alpine:3.8
+FROM alpine:3.9
 
-RUN apk --update add py-pip && \
-    apk --update add -t deps git gcc libjpeg-turbo-dev musl-dev python-dev zlib-dev && \
-    pip install -U sphinx==1.8.3 Pygments setuptools \
+RUN apk --update add python3 && \
+    apk add -t deps git gcc libjpeg-turbo-dev musl-dev python3-dev zlib-dev && \
+    python3 -m pip install -U sphinx==2.0.1 Pygments setuptools \
                    docutils mkdocs mock pillow \
                    git+https://github.com/rtfd/readthedocs-sphinx-ext.git \
                    sphinx-rtd-theme alabaster \
